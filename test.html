@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Form</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <!-- Tab links -->
+    <ul class="tabs">
+        <li><a href="#tab1">Tab 1</a></li>
+        <li><a href="#tab2">Tab 2</a></li>
+        <li><a href="#tab3">Tab 3</a></li>
+      </ul>
+      <div id="tab1" class="tab-content">
+        <p>Content for tab 1 goes here</p>
+      </div>
+      <div id="tab2" class="tab-content">
+        <p>Content for tab 2 goes here</p>
+      </div>
+      <div id="tab3" class="tab-content">
+        <p>Content for tab 3 goes here</p>
+      </div>
+          
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="London" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+    <h1>Fill Your Details</h1>
+  <form id="my-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br>
+    <p>Select Your Gender:</p>
+    <input type="radio" name="gender" value="Male">
+    <label for="Male">Male</label><br>
+    <input type="radio" name="gender" value="Female">
+    <label for="Female">Female</label>
+    <br><br>
+    <label for="Bio">About You:</label><br><br>
+    <textarea name="Bio" id="Bio" cols="30" rows="10" placeholder="Enter your bio....."></textarea>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ea mollitia similique dignissimos? Quis eaque dolore maiores ullam doloribus rerum officia eveniet, ea nihil molestias dolorem ut, esse aliquid voluptas!</p>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <form>
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><input type="email" name="email"></td>
+      </tr>
+      <tr>
+        <th>Message:</th>
+        <td><textarea name="message"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Send"></td>
+      </tr>
+    </table>
+  </form>
+  
+  <table>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+    <tr>
+      <td>What is HTML?</td>
+      <td>HTML (HyperText Markup Language) is a markup language used to structure content on the web.</td>
+    </tr>
+    <tr>
+      <td>What is CSS?</td>
+      <td>CSS (Cascading Style Sheets) is a stylesheet language used to describe the look and formatting of a document written in HTML.</td>
+    </tr>
+  </table>
+  
+  <script>
+    document.getElementById("my-form").addEventListener("submit", function(event) {
+      event.preventDefault();  // prevent the form from submitting
+      var formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value
+      };
+      var jsonData = JSON.stringify(formData);  // convert to JSON format
+      // send the JSON data to a server using an HTTP request
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://example.com/submit", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.send(jsonData);
+    });
+  </script>
+</body>
+</html>

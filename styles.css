@@ -1,0 +1,35 @@
+h1{
+    color: blue;
+    background-color: chartreuse;
+    text-align: center;
+}
+p{
+    color: #fc0404;
+}
+
+form{
+    color: blueviolet;
+}
+.tabs {
+    list-style: none;
+    display: flex;
+  }
+  .tabs li {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-bottom: none;
+  }
+  .tabs li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  
